@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>My To-Do's</h1>
+    <p>You have {{ tasks|length }} to-do's listed.</p>
+
+    <ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }}
+            {% if task.done %}
+                - Completed
+            {% else %}
+                - In progress
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
